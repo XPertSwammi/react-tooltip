@@ -1,6 +1,18 @@
 import type { ElementType, ReactNode, CSSProperties, RefObject } from 'react'
 
-export type PlacesType = 'top' | 'right' | 'bottom' | 'left'
+export type BasePlacesType = 'top' | 'right' | 'bottom' | 'left'
+
+export type ExtendedPlacesType =
+  | 'top-start'
+  | 'top-end'
+  | 'right-start'
+  | 'right-end'
+  | 'bottom-start'
+  | 'bottom-end'
+  | 'left-start'
+  | 'left-end'
+
+export type PlacesType = BasePlacesType | ExtendedPlacesType
 
 export type VariantType = 'dark' | 'light' | 'success' | 'warning' | 'error' | 'info'
 
