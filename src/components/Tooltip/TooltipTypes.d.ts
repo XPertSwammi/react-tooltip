@@ -30,6 +30,7 @@ export type DataAttribute =
   | 'html'
   | 'variant'
   | 'offset'
+  | 'crossOffset'
   | 'wrapper'
   | 'events'
   | 'position-strategy'
@@ -56,6 +57,7 @@ export interface ITooltip {
   contentWrapperRef?: RefObject<HTMLDivElement>
   place?: PlacesType
   offset?: number
+  crossOffset?: number
   id?: string
   variant?: VariantType
   /**

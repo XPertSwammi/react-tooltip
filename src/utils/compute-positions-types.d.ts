@@ -18,6 +18,7 @@ export interface IComputePositions {
     | 'left-start'
     | 'left-end'
   offset?: number
+  crossOffset?: number
   strategy?: 'absolute' | 'fixed'
   middlewares?: Middleware[]
 }

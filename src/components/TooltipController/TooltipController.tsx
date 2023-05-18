@@ -26,6 +26,7 @@ const TooltipController = ({
   variant = 'dark',
   place = 'top',
   offset = 10,
+  crossOffset = 0,
   wrapper = 'div',
   children = null,
   events = ['hover'],
@@ -51,6 +52,7 @@ const TooltipController = ({
   const [tooltipPlace, setTooltipPlace] = useState(place)
   const [tooltipVariant, setTooltipVariant] = useState(variant)
   const [tooltipOffset, setTooltipOffset] = useState(offset)
+  const [tooltipCrossOffset, setTooltipCrossOffset] = useState(crossOffset)
   const [tooltipDelayShow, setTooltipDelayShow] = useState(delayShow)
   const [tooltipDelayHide, setTooltipDelayHide] = useState(delayHide)
   const [tooltipFloat, setTooltipFloat] = useState(float)
@@ -94,6 +96,10 @@ const TooltipController = ({
       },
       offset: (value) => {
         setTooltipOffset(value === null ? offset : Number(value))
+      },
+      crossOffset: (value) => {
+        console.log(value)
+        setTooltipCrossOffset(value === null ? crossOffset : Number(value))
       },
       wrapper: (value) => {
         setTooltipWrapper((value as WrapperType) ?? wrapper)
@@ -145,6 +151,10 @@ const TooltipController = ({
   useEffect(() => {
     setTooltipOffset(offset)
   }, [offset])
+
+  useEffect(() => {
+    setTooltipCrossOffset(crossOffset)
+  }, [crossOffset])
 
   useEffect(() => {
     setTooltipDelayShow(delayShow)
@@ -264,6 +274,7 @@ const TooltipController = ({
     place: tooltipPlace,
     variant: tooltipVariant,
     offset: tooltipOffset,
+    crossOffset: tooltipCrossOffset,
     wrapper: tooltipWrapper,
     events: tooltipEvents,
     openOnClick,

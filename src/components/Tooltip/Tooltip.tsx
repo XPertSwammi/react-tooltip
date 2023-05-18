@@ -17,6 +17,7 @@ const Tooltip = ({
   anchorSelect,
   place = 'top',
   offset = 10,
+  crossOffset = 0,
   events = ['hover'],
   openOnClick = false,
   positionStrategy = 'absolute',
@@ -228,6 +229,7 @@ const Tooltip = ({
     computeTooltipPosition({
       place,
       offset,
+      crossOffset,
       elementReference: virtualElement,
       tooltipReference: tooltipRef.current,
       tooltipArrowReference: tooltipArrowRef.current,
@@ -461,6 +463,7 @@ const Tooltip = ({
     computeTooltipPosition({
       place,
       offset,
+      crossOffset,
       elementReference: activeAnchor,
       tooltipReference: tooltipRef.current,
       tooltipArrowReference: tooltipArrowRef.current,
@@ -483,7 +486,17 @@ const Tooltip = ({
 
   useEffect(() => {
     updateTooltipPosition()
-  }, [show, activeAnchor, content, externalStyles, place, offset, positionStrategy, position])
+  }, [
+    show,
+    activeAnchor,
+    content,
+    externalStyles,
+    place,
+    offset,
+    crossOffset,
+    positionStrategy,
+    position,
+  ])
 
   useEffect(() => {
     if (!contentWrapperRef?.current) {

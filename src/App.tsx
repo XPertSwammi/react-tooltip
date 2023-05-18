@@ -6,12 +6,19 @@ import styles from './styles.module.css'
 
 function App() {
   const [isDarkOpen, setIsDarkOpen] = useState(false)
+
   return (
     <main className={styles['main']}>
       <button data-tooltip-id="button" data-tooltip-content="My big tooltip content 1">
         My button
       </button>
-      <Tooltip id="button" place="top" isOpen={isDarkOpen} setIsOpen={setIsDarkOpen} />
+      <Tooltip
+        id="button"
+        place="top-start"
+        positionStrategy="fixed"
+        isOpen={isDarkOpen}
+        setIsOpen={setIsDarkOpen}
+      />
     </main>
   )
 }

@@ -15,7 +15,7 @@
     "bundlesize": "bundlesize",
     "esbuild": "esbuild",
     "test": "jest",
-    "postbuild": "npm run types && npm run bundlesize",
+    "postbuild": "npm run types",
     "prepublishOnly": "npm run build"
   },
   "types": "dist/react-tooltip.d.ts",
@@ -64,7 +64,6 @@
     "@types/react-test-renderer": "^18.0.0",
     "@typescript-eslint/eslint-plugin": "5.54.0",
     "@typescript-eslint/parser": "5.54.0",
-    "bundlesize": "^0.18.1",
     "css-loader": "6.7.3",
     "esbuild": "0.17.11",
     "esbuild-css-modules-plugin": "^2.7.1",

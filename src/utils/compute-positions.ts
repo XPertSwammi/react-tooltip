@@ -7,8 +7,13 @@ export const computeTooltipPosition = async ({
   tooltipArrowReference = null,
   place = 'top',
   offset: offsetValue = 10,
+  crossOffset = 0,
   strategy = 'absolute',
-  middlewares = [offset(Number(offsetValue)), flip(), shift({ padding: 5 })],
+  middlewares = [
+    offset({ mainAxis: Number(offsetValue), crossAxis: crossOffset }),
+    flip(),
+    shift({ padding: 5 }),
+  ],
 }: IComputePositions) => {
   if (!elementReference) {
     // elementReference can be null or undefined and we will not compute the position

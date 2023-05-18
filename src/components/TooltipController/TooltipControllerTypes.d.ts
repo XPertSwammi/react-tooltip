@@ -22,6 +22,7 @@ export interface ITooltipController {
   render?: (render: { content: string | null; activeAnchor: HTMLElement | null }) => ChildrenType
   place?: PlacesType
   offset?: number
+  crossOffset?: number
   id?: string
   variant?: VariantType
   /**
